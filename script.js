@@ -26,13 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Open item dynamic functionality inside center page layout
-    window.openProject = function(title, description) {
-        modalBody.innerHTML = `
+    window.openProject = function(title, description, imagePath) {
+    const modalBody = document.getElementById('modalBody');
+    
+    modalBody.innerHTML = `
+        <div class="modal-img-container">
+            <img src="${imagePath}" alt="${title}">
+        </div>
+        <div class="modal-text-container">
             <h2 class="modal-project-title">${title}</h2>
             <p class="modal-project-desc">${description}</p>
-        `;
-        modal.classList.add('open');
-    };
+        </div>
+    `;
+    
+    document.getElementById('detailModal').classList.add('open');
+};
 
     // Close view popup window overlay
     window.closeProject = function() {
