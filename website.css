@@ -1,0 +1,305 @@
+/* Reset & Base System */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0b0a;
+    color: #cbd5e1;
+    font-family: 'Cinzel', 'Didot', 'Playfair Display', serif;
+    letter-spacing: 0.12em;
+    height: 100vh;
+    overflow: hidden; /* Lock regular viewport scroll to match app behavior */
+}
+
+/* Base Headings Setup */
+h1, h2, h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #f8fafc;
+}
+
+/* Dynamic Viewer Stage */
+.viewer-container {
+    height: calc(100vh - 70px); /* Keeps space open safely for bottom bar */
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.content-stage {
+    width: 100%;
+    max-width: 1100px;
+    height: 100%;
+    position: relative;
+}
+
+/* Individual Fullscreen Page View panels */
+.page-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Allow independent scrolling if content overflows */
+    padding-bottom: 20px;
+}
+
+.page-view.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+/* Home Panel Styling */
+.hero-block {
+    text-align: center;
+    max-width: 600px;
+}
+
+.brand-title {
+    font-size: 3.5rem;
+    letter-spacing: 0.35em;
+    margin-bottom: 5px;
+    color: #f5f2eb;
+}
+
+.brand-subtitle {
+    font-size: 0.9rem;
+    color: #8c8275;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.brand-tagline {
+    font-size: 0.85rem;
+    line-height: 2;
+    color: #a3998a;
+}
+
+/* Works Panel Grid layout */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-height: 100%;
+    padding: 10px;
+}
+
+.work-card {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(84, 77, 66, 0.2);
+}
+
+.work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(30%) brightness(50%) contrast(110%);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+}
+
+.work-card:hover img {
+    transform: scale(1.02);
+    filter: sepia(15%) brightness(60%) contrast(105%);
+}
+
+.card-meta {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(13, 11, 10, 0.85);
+    padding: 8px 16px;
+    backdrop-filter: blur(4px);
+}
+
+.card-meta span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #e2e8f0;
+}
+
+/* Services Panel Layout */
+.services-list {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.service-item {
+    border-bottom: 1px solid rgba(84, 77, 66, 0.3);
+    padding-bottom: 30px;
+}
+
+.service-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #e2e8f0;
+}
+
+.service-item p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: #8c8275;
+}
+
+/* Centered Work Detail Modal / Overlay Setup */
+.center-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.center-modal.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(6, 5, 4, 0.92);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #141211;
+    border: 1px solid #2e2824;
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    transform: scale(0.95);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    text-align: center;
+}
+
+.center-modal.open .modal-content {
+    transform: scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #8c8275;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #f5f2eb;
+}
+
+/* Target Inner Modal Design */
+.modal-project-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 0.2em;
+    color: #f5f2eb;
+}
+
+.modal-project-desc {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: #a3998a;
+}
+
+/* Bottom Navigation Bar Layout */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 70px;
+    background-color: #090807;
+    border-top: 1px solid rgba(84, 77, 66, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.nav-links {
+    display: flex;
+    gap: 60px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    font-family: inherit;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    padding: 10px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    color: #f5f2eb;
+}
+
+/* Simple bottom indicator bar */
+.nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #f5f2eb;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-btn.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Responsive adjust for smaller screens */
+@media (max-width: 768px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        gap: 30px;
+    }
+    .brand-title {
+        font-size: 2.2rem;
+    }
+}
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMEN | Portfolio & Services</title>
+    <link rel="stylesheet" href="website.css">
+</head>
+<body>
+
+    <!-- Main Dynamic Viewer Screen -->
+    <main class="viewer-container">
+        <div class="content-stage">
+            
+            <!-- Default Home View -->
+            <section id="home" class="page-view active">
+                <div class="hero-block">
+                    <h1 class="brand-title">LUMEN</h1>
+                    <p class="brand-subtitle">digital studio</p>
+                    <p class="brand-tagline">In shadows, we found clarity. Crafting deep aesthetic experiences for high-end hospitality and architectural narratives.</p>
+                </div>
+            </section>
+
+            <!-- Works Portfolio Grid View -->
+            <section id="works" class="page-view">
+                <div class="works-grid">
+                    <div class="work-card" onclick="openProject('Earth Memory', 'Vol. 1 — Deeply rooted textures exploring structural form and muted environments.')">
+                        <img src="https://unsplash.com" alt="Work 1">
+                        <div class="card-meta"><span>Earth Memory</span></div>
+                    </div>
+                    <div class="work-card" onclick="openProject('The Horizon', 'Captured atmospheric motion reflecting the calm before deep dark storms.')">
+                        <img src="https://unsplash.com" alt="Work 2">
+                        <div class="card-meta"><span>The Horizon</span></div>
+                    </div>
+                    <div class="work-card" onclick="openProject('Chiaroscuro', 'A study on warm low-light spatial distribution inside premium structural layouts.')">
+                        <img src="https://unsplash.com" alt="Work 3">
+                        <div class="card-meta"><span>Chiaroscuro</span></div>
+                    </div>
+                    <div class="work-card" onclick="openProject('Silent Monolith', 'Minimalist architectural silhouettes interacting with heavy environmental texturing.')">
+                        <img src="https://unsplash.com" alt="Work 4">
+                        <div class="card-meta"><span>Silent Monolith</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services View -->
+            <section id="services" class="page-view">
+                <div class="services-list">
+                    <div class="service-item">
+                        <h3>01 / Creative Direction</h3>
+                        <p>Forging high-end, cohesive visual identities rooted heavily in atmospheric and moody sensory aesthetics.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>02 / Spatial Design</h3>
+                        <p>Curating exceptional premium interior concepts tailored entirely for ultra-luxury hospitality platforms.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>03 / Digital Architecture</h3>
+                        <p>Constructing dark, pristine web environments meant to echo physical high-fidelity gallery aesthetics.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Centered Work Detail Modal / Overlay Pop-up -->
+    <div id="detailModal" class="center-modal">
+        <div class="modal-backdrop" onclick="closeProject()"></div>
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeProject()">&times;</button>
+            <div id="modalBody">
+                <!-- Content injected dynamically via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <div class="nav-links">
+            <button class="nav-btn active" data-target="home">Home</button>
+            <button class="nav-btn" data-target="works">Works</button>
+            <button class="nav-btn" data-target="services">Services</button>
+        </div>
+    </nav>
+
+    <script src="website.js"></script>
+</body>
+</html>
