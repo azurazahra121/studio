@@ -185,8 +185,8 @@ h1, h2, h3 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(6, 5, 4, 0.92);
-    backdrop-filter: blur(8px);
+    background-color: rgba(6, 5, 4, 0.95);
+    backdrop-filter: blur(12px);
 }
 
 .modal-content {
@@ -194,15 +194,80 @@ h1, h2, h3 {
     background-color: #141211;
     border: 1px solid #2e2824;
     width: 90%;
-    max-width: 600px;
-    padding: 40px;
+    max-width: 900px;
+    max-height: 80vh; /* Scaled down slightly to respect navigation spacing */
     transform: scale(0.95);
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    text-align: center;
+    overflow: hidden;
 }
 
 .center-modal.open .modal-content {
     transform: scale(1);
+}
+
+/* Two-column layout */
+.modal-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Balanced 50/50 desktop split */
+    height: 100%;
+    width: 100%;
+}
+
+.modal-img-container {
+    width: 100%;
+    height: 100%;
+    background-color: #0d0b0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Prevents extreme cropping of raw proportions */
+    background-color: #0d0b0a;
+}
+
+.modal-text-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    overflow-y: auto; /* Fallback text safety scroll */
+}
+
+/* RESPONSIVE MOBILE MEDIA QUERY OVERRIDE */
+@media (max-width: 768px) {
+    .modal-content {
+        max-height: 75vh; /* Prevents overlaps with browser bars */
+    }
+
+    .modal-split-layout {
+        grid-template-columns: 1fr; /* Switch to stack vertically on phones */
+        grid-template-rows: 50% 50%; /* Uniformly splits the visible pop-up */
+        height: 100vh;
+    }
+
+    .modal-img-container {
+        height: 100%;
+    }
+
+    .modal-img-container img {
+        object-fit: contain; /* Guarantees your custom work scales inside the window boundaries */
+    }
+
+    .modal-text-container {
+        padding: 20px;
+        justify-content: flex-start; /* Shifts text upwards smoothly */
+    }
+    
+    .modal-project-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
 }
 
 .close-btn {
