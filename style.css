@@ -302,4 +302,55 @@ h1, h2, h3 {
     }
 }
 
+/* Style for the Email link in bottom navigation */
+.nav-email {
+    color: #64748b;
+    font-family: inherit;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    padding: 10px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
 
+.nav-email:hover {
+    color: #f5f2eb;
+}
+
+.nav-email::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #f5f2eb;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-email:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Modal text slide-and-fade animation */
+.modal-text-container > * {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Delays the text slightly so it feels premium and sequential */
+.center-modal.open .modal-project-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.center-modal.open .modal-project-desc {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.35s;
+}
