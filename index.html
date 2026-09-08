@@ -1,90 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZURA STUDIO | Portfolio & Services</title>
-    <link rel="stylesheet" href="style.css">
+<head>    
+<meta charset="UTF-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<title>AZURA STUDIO | Portfolio & Services</title>    
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-    <!-- Main Dynamic Viewer Screen -->
-    <main class="viewer-container">
-        <div class="content-stage">
-            
-            <!-- Default Home View -->
-            <section id="home" class="page-view active">
-                <div class="hero-block">
-                    <h1 class="brand-title">AZURA STUDIO</h1>
-                    <p class="brand-subtitle">digital studio</p>
-                    <p class="brand-tagline">In shadows, we found clarity. Crafting deep aesthetic experiences for high-end hospitality and architectural narratives.</p>
-                </div>
-            </section>
-
-            <!-- Works Portfolio Grid View -->
-            <section id="works" class="page-view">
-    <div class="works-grid">
-        <div class="work-card" onclick="openProject('Perspective', 'Perspective, digital painting, 2026. Two pale, fragmented forms reach upward through a dense field of dark red and black. The composition centers on strain, a figure caught mid-effort toward a light that remains distant or unreachable, the surrounding darkness pressing in from all sides.', 'images/perspective.jpg')">
-            <img src="images/perspective.jpg" alt="perspective">
-            <div class="card-meta"><span>Perspective</span></div>
-        </div>
-        <div class="work-card" onclick="openProject('The Horizon', 'Captured atmospheric motion reflecting the calm before deep dark storms.', 'images/realization.jpg')">
-            <img src="images/realization.jpg" alt="realization">
-            <div class="card-meta"><span>Realization</span></div>
-        </div>
-        <div class="work-card" onclick="openProject('Chiaroscuro', 'A study on warm low-light spatial distribution.', 'images/sadness.jpg')">
-            <img src="images/sadness.jpg" alt="sadness">
-            <div class="card-meta"><span>Sadness</span></div>
-        </div>
-        <div class="work-card" onclick="openProject('Intention', 'Intention, digital painting, 2026. Two forms meet along an irregular boundary: a diffuse yellow figure and a dense red mass, separated by a dark, fractured edge. The composition explores contact rather than opposition, positioning day and night as counterparts rather than adversaries.', 'images/intention.jpg')">
-            <img src="images/intention.jpg" alt="intention">
-            <div class="card-meta"><span>Intention</span></div>
-        </div>
-    </div>
-            </section>
-
-            <!-- Services View -->
-            <section id="services" class="page-view">
-                <div class="services-list">
-                    <div class="service-item">
-                        <h3>01 / Creative Direction</h3>
-                        <p>Forging high-end, cohesive visual identities rooted heavily in atmospheric and moody sensory aesthetics.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>02 / Spatial Design</h3>
-                        <p>Curating exceptional premium interior concepts tailored entirely for ultra-luxury hospitality platforms.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>03 / Digital Architecture</h3>
-                        <p>Constructing dark, pristine web environments meant to echo physical high-fidelity gallery aesthetics.</p>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-    <!-- Centered Work Detail Modal / Overlay Pop-up -->
-    <div id="detailModal" class="center-modal">
-        <div class="modal-backdrop" onclick="closeProject()"></div>
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeProject()">&times;</button>
-            <div id="modalBody">
-                <!-- Content injected dynamically via JavaScript -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Bottom Navigation Bar -->
-    <nav class="bottom-nav">
-        <div class="nav-links">
-            <button class="nav-btn active" data-target="home">Home</button>
-            <button class="nav-btn" data-target="works">Works</button>
-            <button class="nav-btn" data-target="services">Services</button>
-            <a href="mailto:azurazahra121@email.com" class="nav-email">Contact</a>
-        </div>
-    </nav>
-
-    <script src="script.js"></script>
+<body>    
+<!-- Main Dynamic Viewer Screen -->    
+<main class="viewer-container">        
+<div class="content-stage">                        
+<!-- Default Home View -->            
+<section id="home" class="page-view active">                
+<div class="hero-block">                    
+<h1 class="brand-title">AZURA STUDIO</h1>                    
+<p class="brand-subtitle">digital studio</p>                    
+<p class="brand-tagline">In shadows, we found clarity. Crafting deep aesthetic experiences for high-end hospitality and architectural narratives.</p>                
+</div>            
+</section>            
+<!-- Works Portfolio Grid View -->            
+<section id="works" class="page-view">    
+<div class="works-grid">        
+<div class="work-card" onclick="openProject('Perspective', 'Perspective, digital painting, 2026. Two pale, fragmented forms reach upward through a dense field of dark red and black. The composition centers on strain, a figure caught mid-effort toward a light that remains distant or unreachable, the surrounding darkness pressing in from all sides.', 'images/perspective.jpg')">            
+<img src="images/perspective.jpg" alt="perspective">            
+<div class="card-meta"><span>Perspective</span></div>        
+</div>        
+<div class="work-card" onclick="openProject('The Horizon', 'Captured atmospheric motion reflecting the calm before deep dark storms.', 'images/realization.jpg')">            
+<img src="images/realization.jpg" alt="realization">            
+<div class="card-meta"><span>Realization</span></div>        
+</div>        
+<div class="work-card" onclick="openProject('Impasse', 'Impasse, digital painting, 2026. Two shadowed figures stand close but disconnected against a haze of violet, red, and black. Faint linework suggests a bag, a downturned gaze, the outline of a face. The scene holds tension without resolution, anger and grief present in the same space, neither able to undo what has already happened.', 'images/sadness.jpg')">            
+<img src="images/impasse.jpg" alt="impasse">            
+<div class="card-meta"><span>Impasse</span></div>        
+</div>        
+<div class="work-card" onclick="openProject('Intention', 'Intention, digital painting, 2026. Two forms meet along an irregular boundary: a diffuse yellow figure and a dense red mass, separated by a dark, fractured edge. The composition explores contact rather than opposition, positioning day and night as counterparts rather than adversaries.', 'images/intention.jpg')">            
+<img src="images/intention.jpg" alt="intention">            
+<div class="card-meta"><span>Intention</span></div>        
+</div>    
+</div>            
+</section>            
+<!-- Services View -->            
+<section id="services" class="page-view">                
+<div class="services-list">                    
+<div class="service-item">                        
+<h3>01 / Creative Direction</h3>                        
+<p>Forging high-end, cohesive visual identities rooted heavily in atmospheric and moody sensory aesthetics.</p>                    
+</div>                    
+<div class="service-item">                        
+<h3>02 / Spatial Design</h3>                        
+<p>Curating exceptional premium interior concepts tailored entirely for ultra-luxury hospitality platforms.</p>                    
+</div>                    
+<div class="service-item">                        
+<h3>03 / Digital Architecture</h3>                        
+<p>Constructing dark, pristine web environments meant to echo physical high-fidelity gallery aesthetics.</p>                    
+</div>                
+</div>            
+</section>        
+</div>    
+</main>    
+<!-- Centered Work Detail Modal / Overlay Pop-up -->    
+<div id="detailModal" class="center-modal">        
+<div class="modal-backdrop" onclick="closeProject()"></div>        
+<div class="modal-content">            
+<button class="close-btn" onclick="closeProject()">&times;</button>            
+<div id="modalBody">                
+<!-- Content injected dynamically via JavaScript -->            
+</div>        
+</div>    
+</div>    
+<!-- Bottom Navigation Bar -->    
+<nav class="bottom-nav">        
+<div class="nav-links">            
+<button class="nav-btn active" data-target="home">Home</button>            
+<button class="nav-btn" data-target="works">Works</button>            
+<button class="nav-btn" data-target="services">Services</button>            
+<a href="mailto:azurazahra121@email.com" class="nav-email">Contact</a>        
+</div>    
+</nav>    
+<script src="script.js"></script>
 </body>
 </html>
