@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Open item dynamic functionality inside center page layout
-    window.openProject = function(title, description, imagePath) {
+    window.openProject = function(artist, title, description, imagePath) {
     const modalBody = document.getElementById('modalBody');
     
     modalBody.innerHTML = `
@@ -34,8 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${imagePath}" alt="${title}">
         </div>
         <div class="modal-text-container">
+            <h1 class="modal-artist-brand">${artist}</h1>
             <h2 class="modal-project-title">${title}</h2>
             <p class="modal-project-desc">${description}</p>
+            <a href="mailto:yourname@://email.com regarding ${title}" class="modal-inquire-btn">Inquire</a>
         </div>
     `;
     
